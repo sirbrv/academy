@@ -1,0 +1,207 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ol,
+ul {
+  padding: 0;
+}
+h1 {
+  /* margin: 0px 0 0px 0; */
+  font-size: 3em;
+}
+h2 {
+  display: flex;
+  justify-content: center;
+  font-size: 2.5em;
+}
+h3 {
+  display: flex;
+  justify-content: center;
+  font-size: 1.8em;
+}
+body {
+  background-color: rgb(241, 241, 241);
+  /* user-select: none; */
+  font-family: "Roboto", sans-serif;
+}
+
+label {
+  font-weight: 700;
+  font-style: italic;
+}
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* margin: 10px auto; */
+}
+
+.marco {
+  display: flex;
+  /* justify-content: center;
+  align-items: center; */
+  /* 
+  margin: 100px auto; */
+}
+
+.temario {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding-top: 50px;
+}
+
+.proyectos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
+  width: 50%;
+}
+
+.grupBtn {
+  padding: 50px 20%;
+}
+.btnApp {
+  color: white;
+  margin: 5px;
+  padding: 8px 20px;
+  border: 1px solid rgb(5, 72, 5);
+  outline: none;
+  background-color: rgb(5, 72, 5);
+  font-size: 1.2em;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 7px;
+}
+
+.btnApp:hover {
+  background-color: white;
+  color: black;
+}
+/* paginacion */
+.addBtn {
+  background-color: rgb(43, 79, 194);
+  color: white;
+  padding: 3px 5px;
+  border: 0;
+  margin-left: 20%;
+}
+.addBtn:hover {
+  background-color: rgb(55, 102, 255);
+}
+.btnEdid {
+  background-color: transparent;
+  color: black;
+  padding: 1px 1px;
+  border: 0.4px solid cornsilk;
+}
+.btnShow {
+  /* background-color: transparent;
+  color: black;
+  border: 0.4px  solid cornsilk; */
+  width: 30px;
+  cursor: pointer;
+}
+.btnDel {
+  background-color: transparent;
+  color: black;
+  padding: 1px 1px;
+  border: 0.4px solid cornsilk;
+}
+/* paginacion */
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pageSice {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.pagination > ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pagination > ul > li {
+  font-style: none;
+  padding: 5px 10px;
+  background-color: rgb(5, 78, 124);
+  background: linear-gradient(to right, #5fa2ff, #867bfe);
+  margin: 0 5px;
+  border: 1px solid rgb(5, 78, 124);
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  font-weight: 500;
+}
+.pagination > ul > li:hover {
+  background-color: white;
+  background: linear-gradient(
+    to right,
+    #ff7e5f,
+    #feb47b
+  ); /* Cambia los colores según tus preferencias */
+
+  border: 1px solid rgb(5, 78, 124);
+  color: black;
+}
+.pagination > ul > li:active {
+  background-color: rgb(189, 16, 99);
+  border: 1px solid rgb(189, 16, 99);
+  color: black;
+}
+.buttonPagination {
+  display: flex;
+  align-items: center;
+  padding-right: 80px;
+}
+.btnPagination {
+  color: black;
+  background-color: transparent;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 50px;
+  margin: 0 5px;
+}
+.btnPagination:hover {
+  background-color: rgb(229, 231, 232);
+}
+
+.activo {
+  background-color: #0a0346; /* Cambia el color según tus preferencias */
+}
+
+.textCenter {
+  margin: auto;
+  text-align: center;
+  margin-top: 4%;
+  margin-bottom: 100px;
+}
+.tittle-search {
+  /* margin-top: 20px; */
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.seatch {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tittle {
+  font-size: 2em;
+  font-weight: 600;
+  /* margin-left: 60px; */
+}
