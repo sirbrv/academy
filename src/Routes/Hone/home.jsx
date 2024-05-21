@@ -19,7 +19,7 @@ const Home = () => {
         <p>
           Envíanos un mensaje y te atenderemos a la brevedad posible. Registrate
           en el siguientes <Link to={"/register"}>link</Link> y forma parte de
-          nuestro selecto grupos de estudiantes.
+          nuestra institución y nuestro selecto grupos de estudiantes.
         </p>
         <Contact />
       </div>
