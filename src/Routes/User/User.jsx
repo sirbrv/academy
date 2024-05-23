@@ -11,7 +11,7 @@ export default function User({ user, edit, riviewList }) {
   // AccessProfil("isAdmin");
   const { HandleNivelClose } = useAppContext();
   const hostServer = import.meta.env.VITE_REACT_APP_SERVER_HOST;
-  const api = `${hostServer}/api/v3/user`;
+  const api = `${hostServer}/api/v2/user`;
   const [error, setError] = useState(false);
 
   const roles = [

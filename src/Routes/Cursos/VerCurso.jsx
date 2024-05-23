@@ -10,7 +10,7 @@ import "../../home.css";
 export default function VerCurso({ curso }) {
   const hostServer = import.meta.env.VITE_REACT_APP_SERVER_HOST;
   const { HandleNivelClose } = useAppContext();
-  const api = `${hostServer}/api/v3/course`;
+  const api = `${hostServer}/api/v2/course`;
   const [teachers, setTeachers] = useState([]);
   const [error, setError] = useState(false);
   const initialForm = {
@@ -126,7 +126,7 @@ export default function VerCurso({ curso }) {
   }, [data]);
 
   const getTeachers = async () => {
-    const url = "http://localhost:5000/api/v3/teachers";
+    const url = "http://localhost:5000/api/v2/teachers";
     const response = await fetch(url);
     const responseData = await response.json();
     if (async () => await responseData.data) {

@@ -9,7 +9,7 @@ import validationSchema from "../../componets/services/validationSchema";
 
 export default function Teacher({ teacher, edit, riviewList }) {
   const hostServer = import.meta.env.VITE_REACT_APP_SERVER_HOST;
-  const api = `${hostServer}/api/v3/teacher`;
+  const api = `${hostServer}/api/v2/teacher`;
   const { HandleNivelClose } = useAppContext();
   const [error, setError] = useState(false);
   const initialForm = {

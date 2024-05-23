@@ -10,7 +10,7 @@ import validationSchema from "../../componets/services/validationSchema";
 export default function Curso({ curso, edit, riviewList }) {
   const hostServer = import.meta.env.VITE_REACT_APP_SERVER_HOST;
   const { HandleNivelClose } = useAppContext();
-  const api = `${hostServer}/api/v3/course`;
+  const api = `${hostServer}/api/v2/course`;
   let urlImage = "s";
   const [teachers, setTeachers] = useState([]);
   const [error, setError] = useState(false);
@@ -103,7 +103,7 @@ export default function Curso({ curso, edit, riviewList }) {
   const handleSubImg = async () => {
     const formData = new FormData();
     formData.append("imageCourse", imageCourse);
-    const urlServer = `${hostServer}/api/v3/image`;
+    const urlServer = `${hostServer}/api/v2/image`;
     try {
       const response = await fetch(urlServer, {
         method: "POST",
@@ -169,7 +169,7 @@ export default function Curso({ curso, edit, riviewList }) {
   // }, [urlImage]);
 
   const getTeachers = async () => {
-    const urlServer = `${hostServer}/api/v3/teachers`;
+    const urlServer = `${hostServer}/api/v2/teachers`;
     const response = await fetch(urlServer);
     const responseData = await response.json();
     if (async () => await responseData.data) {

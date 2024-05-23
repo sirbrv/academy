@@ -10,7 +10,7 @@ import validationSchema from "../../componets/services/validationSchema";
 export default function Curso({ matricula, edit, riviewList }) {
   const { HandleNivelClose } = useAppContext();
   const hostServer = import.meta.env.VITE_REACT_APP_SERVER_HOST;
-  const api = `${hostServer}/api/v3/matricula`;
+  const api = `${hostServer}/api/v2/matricula`;
   const [teachers, setTeachers] = useState([]);
   const [students, setStudents] = useState([]);
   const [courses, setCourses] = useState([]);
@@ -102,7 +102,7 @@ export default function Curso({ matricula, edit, riviewList }) {
   }, [data]);
 
   const getCourses = async () => {
-    let url = `${hostServer}/api/v3/courses`;
+    let url = `${hostServer}/api/v2/courses`;
     let response = await fetch(url);
     let responseCurso = await response.json();
     console.log(responseCurso);
@@ -112,7 +112,7 @@ export default function Curso({ matricula, edit, riviewList }) {
 
     cargaTeacher(responseCurso?.data[0].profesores);
 
-    url = `${hostServer}/api/v3/students`;
+    url = `${hostServer}/api/v2/students`;
     response = await fetch(url);
     let responseData = await response.json();
     if (async () => await responseData.data) {

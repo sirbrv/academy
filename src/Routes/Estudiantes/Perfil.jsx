@@ -70,7 +70,7 @@ export default function Perfil({ title }) {
       // if (!edit) {
       //   await createData(url, formData);
       // } else {
-        await updateData(url, student.id, formData);
+      await updateData(url, student.id, formData);
       // }
     } else {
       Swal.fire({
