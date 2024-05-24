@@ -14,7 +14,7 @@ import { IoMdAdd } from "react-icons/io";
 
 export default function ListTeacher({ title }) {
   const hostServer = import.meta.env.VITE_REACT_APP_SERVER_HOST;
-  const url = `${hostServer}/api/v2/teachers`;
+  const url = `${hostServer}/api/v3/teachers`;
   const [selectProfs, setSelectedProfs] = useState([]);
   const [selectedItems, setSelectedItems] = useState([]);
   const [page, setPage] = useState(1);
@@ -56,7 +56,7 @@ export default function ListTeacher({ title }) {
   };
 
   const handleDel = async (id) => {
-    const url = `${hostServer}/api/v2/teacher`;
+    const url = `${hostServer}/api/v3/teacher`;
     const delId = id;
     Swal.fire({
       title: "Está Seguro?",
@@ -92,7 +92,7 @@ export default function ListTeacher({ title }) {
   };
 
   const getTeachers = async () => {
-    const url = `${hostServer}/api/v2/teachers`;
+    const url = `${hostServer}/api/v3/teachers`;
     await getData(url);
   };
 

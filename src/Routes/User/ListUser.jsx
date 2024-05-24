@@ -16,7 +16,7 @@ export default function ListUser({ title }) {
   // const { setUsersContext } = useUsersContext();
   AccessProfil();
   const hostServer = import.meta.env.VITE_REACT_APP_SERVER_HOST;
-  const api = `${hostServer}/api/v2/users`;
+  const api = `${hostServer}/api/v3/users`;
   const ref = useRef(null);
   const [selectedItems, setSelectedItems] = useState([]);
   const [error, setError] = useState(false);
@@ -59,7 +59,7 @@ export default function ListUser({ title }) {
   };
 
   const handleDel = async (id) => {
-    const url = `${hostServer}/api/v2/user`;
+    const url = `${hostServer}/api/v3/user`;
     const delId = id;
     Swal.fire({
       title: "Está Seguro?",
@@ -95,7 +95,7 @@ export default function ListUser({ title }) {
   };
 
   const getUsers = async () => {
-    const url = `${hostServer}/api/v2/users`;
+    const url = `${hostServer}/api/v3/users`;
     const result = await getData(url);
   };
 

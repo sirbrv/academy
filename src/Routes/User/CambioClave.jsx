@@ -7,7 +7,7 @@ import { useUsersContext } from "../../hooks/UsersContext";
 function CambioClave() {
   const { usersContext } = useUsersContext();
   const hostServer = import.meta.env.VITE_REACT_APP_SERVER_HOST;
-  const url = `${hostServer}/api/v2/user/cambio`;
+  const url = `${hostServer}/api/v3/user/cambio`;
   const [email, setEmail] = useState("");
   const [oldPassword, setOldPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");

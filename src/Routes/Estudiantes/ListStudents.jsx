@@ -15,7 +15,7 @@ import { IoMdAdd } from "react-icons/io";
 export default function ListStudent({ title }) {
   const hostServer = import.meta.env.VITE_REACT_APP_SERVER_HOST;
   const { HandleNivelClose } = useAppContext();
-  const url = `${hostServer}/api/v2/students`;
+  const url = `${hostServer}/api/v3/students`;
   const ref = useRef(null);
 
   // const url = "http://localhost:5000/api/students";
@@ -59,7 +59,7 @@ export default function ListStudent({ title }) {
   };
 
   const handleDel = async (id) => {
-    const url = `${hostServer}/api/v2/student`;
+    const url = `${hostServer}/api/v3/student`;
 
     // const url = "http://localhost:5000/api/student";
     const delId = id;
@@ -97,7 +97,7 @@ export default function ListStudent({ title }) {
   };
 
   const getStudents = async () => {
-    const url = `${hostServer}/api/v2/students`;
+    const url = `${hostServer}/api/v3/students`;
     // const url = "http://localhost:5000/api/Students";
     const result = await getData(url);
   };

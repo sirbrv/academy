@@ -15,7 +15,7 @@ import { useAppContext } from "../../hooks/appContext";
 export default function ListMatricula({ title }) {
   const hostServer = import.meta.env.VITE_REACT_APP_SERVER_HOST;
   const { HandleNivelClose } = useAppContext();
-  const url = `${hostServer}/api/v2/matriculas`;
+  const url = `${hostServer}/api/v3/matriculas`;
   const [selectedItems, setSelectedItems] = useState([]);
   const [page, setPage] = useState(1);
   const [itemsPage, setItemsPage] = useState(8);
@@ -57,7 +57,7 @@ export default function ListMatricula({ title }) {
   };
 
   const handleDel = async (id) => {
-    const url = `${hostServer}/api/v2/matricula`;
+    const url = `${hostServer}/api/v3/matricula`;
 
     const delId = id;
     Swal.fire({
@@ -94,7 +94,7 @@ export default function ListMatricula({ title }) {
   };
 
   const getMatriculas = async () => {
-    const url = `${hostServer}/api/v2/matriculas`;
+    const url = `${hostServer}/api/v3/matriculas`;
     const result = await getData(url);
   };
 
