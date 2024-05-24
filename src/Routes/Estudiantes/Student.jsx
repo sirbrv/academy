@@ -15,7 +15,7 @@ export default function Student({ student, edit, riviewList }) {
   const api = `${hostServer}/api/v2/student`;
   const [error, setError] = useState(false);
   const initialForm = {
-    id: student ? student._id : "",
+    id: student ? student.id : "",
     dni: student ? student.dni : "",
     nombre: student ? student.nombre : "",
     apellido: student ? student.apellido : "",
@@ -63,7 +63,7 @@ export default function Student({ student, edit, riviewList }) {
       if (!edit) {
         await createData(url, formData);
       } else {
-        await updateData(url, student._id, formData);
+        await updateData(url, student.id, formData);
       }
     } else {
       Swal.fire({

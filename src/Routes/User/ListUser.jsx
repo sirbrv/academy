@@ -159,7 +159,7 @@ export default function ListUser({ title }) {
                   <tbody>
                     {selectedItems.map((user) => {
                       return (
-                        <tr key={user._id}>
+                        <tr key={user.id}>
                           <td>{user.dni}</td>
                           <td>{`${user.nombre} ${user.apellido}`} </td>
                           <td>{user.email}</td>
@@ -178,7 +178,7 @@ export default function ListUser({ title }) {
                               style={{
                                 fontSize: "25px",
                               }}
-                              onClick={() => handleDel(user._id)}
+                              onClick={() => handleDel(user.id)}
                             />
                           </td>
                         </tr>

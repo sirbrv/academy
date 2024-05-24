@@ -163,7 +163,7 @@ export default function ListCurso({ title, accion }) {
                     selectedItems.map((curso) => {
                       if (accion !== "ver") {
                         return (
-                          <tr key={curso._id}>
+                          <tr key={curso.id}>
                             <td>{curso.codigo}</td>
                             <td>{`${curso.nombre}`} </td>
                             <td>{curso.costo}</td>
@@ -177,14 +177,14 @@ export default function ListCurso({ title, accion }) {
                             <td>
                               <FaTrashAlt
                                 style={{ fontSize: "25px" }}
-                                onClick={() => handleDel(curso._id)}
+                                onClick={() => handleDel(curso.id)}
                               />
                             </td>
                           </tr>
                         );
                       } else {
                         return (
-                          <tr key={curso._id}>
+                          <tr key={curso.id}>
                             <td>{curso.codigo}</td>
                             <td>{`${curso.nombre}`} </td>
                             <td>{`${curso.costo}`} </td>

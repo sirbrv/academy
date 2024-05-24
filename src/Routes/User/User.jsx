@@ -26,7 +26,7 @@ export default function User({ user, edit, riviewList }) {
   ];
 
   const initialForm = {
-    id: user ? user._id : null,
+    id: user ? user.id : null,
     dni: user ? user.dni : "",
     nombre: user ? user.nombre : "",
     apellido: user ? user.apellido : "",
@@ -68,7 +68,7 @@ export default function User({ user, edit, riviewList }) {
       if (!edit) {
         await createData(url, formData);
       } else {
-        await updateData(url, user._id, formData);
+        await updateData(url, user.id, formData);
       }
     } else {
       Swal.fire({

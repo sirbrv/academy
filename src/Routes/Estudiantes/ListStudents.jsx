@@ -158,8 +158,8 @@ export default function ListStudent({ title }) {
                   ) : (
                     selectedItems.map((student) => {
                       return (
-                        <tr key={student._id}>
-                          {/* <td>{student._id}</td> */}
+                        <tr key={student.id}>
+                          {/* <td>{student.id}</td> */}
                           <td>{student.dni}</td>
                           <td>{`${student.nombre} ${student.apellido}`} </td>
                           <td>{student.email}</td>
@@ -174,7 +174,7 @@ export default function ListStudent({ title }) {
                           <td>
                             <FaTrashAlt
                               style={{ fontSize: "25px" }}
-                              onClick={() => handleDel(student._id)}
+                              onClick={() => handleDel(student.id)}
                             />
                           </td>
                         </tr>

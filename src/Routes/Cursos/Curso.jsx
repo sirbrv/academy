@@ -15,7 +15,7 @@ export default function Curso({ curso, edit, riviewList }) {
   const [teachers, setTeachers] = useState([]);
   const [error, setError] = useState(false);
   const initialForm = {
-    id: curso ? curso._id : "",
+    id: curso ? curso.id : "",
     codigo: curso ? curso.codigo : "",
     nombre: curso ? curso.nombre : "",
     descripcion: curso ? curso.descripcion : "",
@@ -87,7 +87,7 @@ export default function Curso({ curso, edit, riviewList }) {
       if (!edit) {
         await createData(urlServer, formData);
       } else {
-        await updateData(urlServer, curso._id, formData);
+        await updateData(urlServer, curso.id, formData);
       }
     } else {
       Swal.fire({
