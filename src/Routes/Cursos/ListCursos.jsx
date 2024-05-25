@@ -15,7 +15,7 @@ import { FaRegEye } from "react-icons/fa";
 
 export default function ListCurso({ title, accion }) {
   const hostServer = import.meta.env.VITE_REACT_APP_SERVER_HOST;
-  const url = `${hostServer}/api/v2/courses`;
+  const url = `${hostServer}/api/v3/courses`;
   const [selectedItems, setSelectedItems] = useState([]);
   const [page, setPage] = useState(1);
   const [itemsPage, setItemsPage] = useState(8);
@@ -67,7 +67,7 @@ export default function ListCurso({ title, accion }) {
   };
 
   const handleDel = async (id) => {
-    const url = `${hostServer}/api/v2/course`;
+    const url = `${hostServer}/api/v3/course`;
 
     const delId = id;
     Swal.fire({
@@ -104,7 +104,7 @@ export default function ListCurso({ title, accion }) {
   };
 
   const getCursos = async () => {
-    const url = `${hostServer}/api/v2/courses`;
+    const url = `${hostServer}/api/v3/courses`;
     await getData(url);
   };
 
@@ -163,7 +163,7 @@ export default function ListCurso({ title, accion }) {
                     selectedItems.map((curso) => {
                       if (accion !== "ver") {
                         return (
-                          <tr key={curso.id}>
+                          <tr key={curso._id}>
                             <td>{curso.codigo}</td>
                             <td>{`${curso.nombre}`} </td>
                             <td>{curso.costo}</td>
@@ -177,14 +177,14 @@ export default function ListCurso({ title, accion }) {
                             <td>
                               <FaTrashAlt
                                 style={{ fontSize: "25px" }}
-                                onClick={() => handleDel(curso.id)}
+                                onClick={() => handleDel(curso._id)}
                               />
                             </td>
                           </tr>
                         );
                       } else {
                         return (
-                          <tr key={curso.id}>
+                          <tr key={curso._id}>
                             <td>{curso.codigo}</td>
                             <td>{`${curso.nombre}`} </td>
                             <td>{`${curso.costo}`} </td>

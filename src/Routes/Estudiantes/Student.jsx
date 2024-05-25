@@ -12,10 +12,10 @@ import validationSchema from "../../componets/services/validationSchema";
 export default function Student({ student, edit, riviewList }) {
   const hostServer = import.meta.env.VITE_REACT_APP_SERVER_HOST;
   const { HandleNivelClose } = useAppContext();
-  const api = `${hostServer}/api/v2/student`;
+  const api = `${hostServer}/api/v3/student`;
   const [error, setError] = useState(false);
   const initialForm = {
-    id: student ? student.id : "",
+    id: student ? student._id : "",
     dni: student ? student.dni : "",
     nombre: student ? student.nombre : "",
     apellido: student ? student.apellido : "",
@@ -63,7 +63,7 @@ export default function Student({ student, edit, riviewList }) {
       if (!edit) {
         await createData(url, formData);
       } else {
-        await updateData(url, student.id, formData);
+        await updateData(url, student._id, formData);
       }
     } else {
       Swal.fire({

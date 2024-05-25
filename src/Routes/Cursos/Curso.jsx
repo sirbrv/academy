@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { useFetch } from "../../hooks/useFetch";
 import { useForm } from "../../hooks/useForm";
-
 import Swal from "sweetalert2";
 import { useAppContext } from "../../hooks/appContext";
 import ValidateErrors from "../../componets/services/ValidateErrors";
@@ -10,12 +9,12 @@ import validationSchema from "../../componets/services/validationSchema";
 export default function Curso({ curso, edit, riviewList }) {
   const hostServer = import.meta.env.VITE_REACT_APP_SERVER_HOST;
   const { HandleNivelClose } = useAppContext();
-  const api = `${hostServer}/api/v2/course`;
+  const api = `${hostServer}/api/v3/course`;
   let urlImage = "s";
   const [teachers, setTeachers] = useState([]);
   const [error, setError] = useState(false);
   const initialForm = {
-    id: curso ? curso.id : "",
+    id: curso ? curso._id : "",
     codigo: curso ? curso.codigo : "",
     nombre: curso ? curso.nombre : "",
     descripcion: curso ? curso.descripcion : "",
@@ -87,7 +86,7 @@ export default function Curso({ curso, edit, riviewList }) {
       if (!edit) {
         await createData(urlServer, formData);
       } else {
-        await updateData(urlServer, curso.id, formData);
+        await updateData(urlServer, curso._id, formData);
       }
     } else {
       Swal.fire({
@@ -103,7 +102,7 @@ export default function Curso({ curso, edit, riviewList }) {
   const handleSubImg = async () => {
     const formData = new FormData();
     formData.append("imageCourse", imageCourse);
-    const urlServer = `${hostServer}/api/v2/image`;
+    const urlServer = `${hostServer}/api/v3/image`;
     try {
       const response = await fetch(urlServer, {
         method: "POST",
@@ -169,7 +168,7 @@ export default function Curso({ curso, edit, riviewList }) {
   // }, [urlImage]);
 
   const getTeachers = async () => {
-    const urlServer = `${hostServer}/api/v2/teachers`;
+    const urlServer = `${hostServer}/api/v3/teachers`;
     const response = await fetch(urlServer);
     const responseData = await response.json();
     if (async () => await responseData.data) {
